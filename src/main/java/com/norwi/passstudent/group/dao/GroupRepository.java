@@ -10,30 +10,27 @@
  * with FORS.
  */
 
-package com.norwi.passstudent.student.dao;
+package com.norwi.passstudent.group.dao;
 
-import com.norwi.passstudent.student.model.Student;
+import com.norwi.passstudent.group.model.Group;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 /**
  * @author Abaev Evgeny
  */
-public interface StudentRepository {
+public interface GroupRepository {
+    /**
+     * @param id группы
+     * @return группу со студентами
+     */
+    public Optional<Group> getGroup(Long id);
 
     /**
-     * This is the method to be used to initialize
-     * database resources ie. connection.
+     * @return все группы
      */
-    public Optional<Student> getStudent(Long id);
-    /**
-     * This is the method to be used to list down
-     * all the records from the Student table.
-     * @return
-     */
-    public List<Student> listStudents();
-
+    // TODO: 08.11.2021 сделать показ групп по факультетам
+    public List<Group> listGroup();
 
 }

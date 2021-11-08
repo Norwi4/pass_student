@@ -12,13 +12,23 @@
 
 package com.norwi.passstudent.student.model;
 
+
 /**
  * @author Abaev Evgeny
  */
 public class Student {
+    private Long id;
     private Integer age;
     private String name;
-    private Integer id;
+    private Long group_id;
+
+    public Long getGroup_id() {
+        return group_id;
+    }
+
+    public void setGroup_id(Long group_id) {
+        this.group_id = group_id;
+    }
 
     public void setAge(Integer age) {
         this.age = age;
@@ -32,10 +42,11 @@ public class Student {
     public String getName() {
         return name;
     }
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
+
 }

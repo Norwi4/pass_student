@@ -10,10 +10,28 @@
  * with FORS.
  */
 
-CREATE TABLE Student
+DROP TABLE IF EXISTS `students`;
+DROP TABLE IF EXISTS `groups`;
+
+CREATE TABLE `groups`
+(
+    `id` int NOT NULL AUTO_INCREMENT,
+    `title` varchar(20) NOT NULL,
+    PRIMARY KEY (ID)
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 1
+  DEFAULT CHARSET = utf8;
+
+CREATE TABLE `students`
 (
     `id`   INT         NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(20) NOT NULL,
-    `name`  INT         NOT NULL,
-    PRIMARY KEY (ID)
-);
+    `age`  INT         NOT NULL,
+    `group_id` int NOT NULL,
+    PRIMARY KEY (ID),
+    KEY `fk_group` (`group_id`),
+    CONSTRAINT `fk_group` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 1
+  DEFAULT CHARSET = utf8;
+

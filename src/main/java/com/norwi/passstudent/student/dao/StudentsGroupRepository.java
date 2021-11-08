@@ -13,27 +13,20 @@
 package com.norwi.passstudent.student.dao;
 
 import com.norwi.passstudent.student.model.Student;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 /**
  * @author Abaev Evgeny
  */
-public interface StudentRepository {
+@Repository
+public interface StudentsGroupRepository {
 
     /**
-     * This is the method to be used to initialize
-     * database resources ie. connection.
+     *  Получение всех студентов конкретной группы
+     * @param group_id номер группы
+     * @return студентов группы
      */
-    public Optional<Student> getStudent(Long id);
-    /**
-     * This is the method to be used to list down
-     * all the records from the Student table.
-     * @return
-     */
-    public List<Student> listStudents();
-
-
+    public List<Student> listStudentByGroup(Long group_id);
 }

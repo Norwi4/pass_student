@@ -28,9 +28,10 @@ public class StudentMapper implements RowMapper<Student> {
 
     public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
         Student student = new Student();
-        student.setId(rs.getInt("id"));
+        student.setId(rs.getLong("id"));
         student.setName(rs.getString("name"));
         student.setAge(rs.getInt("age"));
+        student.setGroup_id(rs.getLong("group_id"));
         return student;
     }
 }
